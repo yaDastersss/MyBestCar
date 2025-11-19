@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Презентация Автомобиля в Dark Mode</title>
+</head>
+<link rel="stylesheet" href="styles.css">
+<body>
+
+    <header class="header">
+        <h1>Легенндарный автомобиль Анастасия</h1>
+        <p>Самая лучшая машина во все мире, такую не найти нигде.</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="details-section reveal fade-in">
+            <h2>Характеристики Модели</h2>
+            <div class="data-card">
+                <div class="card-item">
+                    <span class="label">Год Выпуска</span>
+                    <span class="value">2010</span>
+                </div>
+                <div class="card-item">
+                    <span class="label">Марка / Модель</span>
+                    <span class="value">Анастасия</span>
+                </div>
+                <div class="card-item">
+                    <span class="label">Двигатель</span>
+                    <span class="value">Красивая, милая, самая лучшая</span>
+                </div>
+                <div class="card-item">
+                    <span class="label">Цвет кузова</span>
+                    <span class="value">Русый - перекрашена в черный</span>
+                </div>
+                 <div class="card-item">
+                    <span class="label">Владельцы</span>
+                    <span class="value">Все хуевые, самый лучший один</span>
+            </div>
+            <button class="action-button">Фотографии автомобиля</button>
+        </section>
+
+        <section class="gallery-section reveal slide-up">
+            <h2>Галерея Изображений</h2>
+            <div class="gallery-grid">
+                <img src="images/photo_2024-03-10_21-07-02.jpg" alt="Топ 1 фото" class="thumbnail" data-full="images/photo_2024-03-10_21-07-02.jpg">
+                <img src="images/photo_2025-10-29_19-00-37.jpg" class=thumbnail data-full="images/photo_2025-10-29_19-00-37.jpg">
+                <img src="images/photo_2025-10-29_19-00-37.jpg" class="thumbnail" data-full="images/photo_2025-10-29_19-00-37.jpg">
+                <img src="images/photo_2025-11-03_17-54-49 (2).jpg" class="thumbnail" data-full="images/photo_2025-11-03_17-54-49 (2).jpg">
+            </div>
+        </section>
+
+    </main>
+
+    <div id="imageModal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="fullImage">
+        <div id="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
