@@ -1,0 +1,202 @@
+/* Переменные для Dark Mode */
+:root {
+    --bg-color: #1a1a2e; /* Основной фон */
+    --text-color: #e4e6eb; /* Основной текст */
+    --accent-color: #00bcd4; /* Акцентный цвет (Cyan) */
+    --secondary-bg: #272738; /* Фон карточек и секций */
+    --border-color: #3f3f5a; /* Цвет границ */
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.5s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Заголовок */
+.header {
+    background-color: var(--secondary-bg);
+    padding: 40px 0;
+    border-bottom: 3px solid var(--accent-color);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    margin-bottom: 40px;
+}
+.header p {
+    text-align: center;
+    color: #a0a0b8;
+}
+
+/* Карточка характеристик (Таблица) */
+.data-card {
+    background-color: var(--secondary-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px var(--shadow-color);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.card-item {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Эффект при наведении на информацию (как вы просили) */
+.card-item:hover {
+    background-color: #3f3f5a; /* Подсветка */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.label {
+    display: block;
+    font-size: 0.9em;
+    color: #a0a0b8;
+    margin-bottom: 5px;
+}
+
+.value {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Кнопка */
+.action-button {
+    display: block;
+    margin: 0 auto 40px;
+    padding: 12px 30px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #0097a7; /* Более темный акцент */
+    transform: scale(1.05);
+}
+
+/* Галерея */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    opacity: 1;
+    transform: scale(1.03);
+    border: 3px solid var(--accent-color);
+}
+
+/* --- АНИМАЦИИ ПРИ ОТКРЫТИИ (Reveal Effect) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Различные стили анимации, чтобы элементы появлялись по-разному */
+.reveal.fade-in {
+    transition-delay: 0.2s; /* Появится чуть позже */
+}
+
+.reveal.slide-up {
+    transition-delay: 0.4s;
+}
+
+/* --- МОДАЛЬНОЕ ОКНО (Modal/Popup) --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Очень темный фон */
+    animation: fadeInModal 0.3s;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    object-fit: contain;
+    animation: zoomIn 0.5s; /* Анимация увеличения при открытии */
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--accent-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Keyframes для анимаций */
+@keyframes fadeInModal {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8);}
+    to {transform: scale(1);}
+}
